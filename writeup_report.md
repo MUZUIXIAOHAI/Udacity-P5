@@ -15,11 +15,12 @@ The goals / steps of this project are the following:
 [image1]: ./report_images/1-origin-images.png
 [image2]: ./report_images/2-images-feature.png
 [image3]: ./report_images/sliding_windows.jpg
-[image4]: ./report_images/sliding_window.jpg
-[image5]: ./report_images/bboxes_and_heat.png
-[image6]: ./report_images/labels_map.png
-[image7]: ./report_images/output_bboxes.png
-[video1]: ./project_video.mp4
+[image4]: ./report_images/4-images-drawboxs.png
+[image5-1]: ./report_images/5-images-result.png
+[image5-2]: ./report_images/5-images-result-2.png
+[image6]: ./report_images/6-images-heatmap.png
+[image7]: ./report_images/7-images-result.png
+[video1]: ./project_video_output.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -38,6 +39,8 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 The code for this step (extracted HOG features) is contained in the 5th code cell of the IPython notebook ，in the function `get_hog_features`    
 
 here I try many parameter combination to find the best parameter for the code.
+
+Here is an example of one of each of the `vehicle HOG image` and 'non-vehicle HOG image':
 
 ![alt text][image2]
 
@@ -61,7 +64,9 @@ hist_bins = 16    # Number of histogram bins
 
 I trained a linear SVM using the images features, the images features combined color features with HOG features in 'extract_features()'
 
-I trained the SVM, and the test accuracy rate is "" 
+I trained the SVM, and the best test accuracy rate I got is 0.9661 
+
+I save the model in 
 
 ### Sliding Window Search
 
@@ -121,15 +126,15 @@ here I used the the scale parameter 1.5 and the below images was showed some sam
 
 Ultimately I searched on "ALL" scales using HLS 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
 
-![alt text][image5]
-![alt text][image5]
+![alt text][image5-1]
+![alt text][image5-2]
 
 ---
 
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./output_test_1.mp4)
+Here's a [link to my video result](./project_video_output.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
@@ -139,7 +144,6 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 Here's an example result showing the heatmap from a test image ：
 
 ![alt text][image6]
-
 
 
 ---
