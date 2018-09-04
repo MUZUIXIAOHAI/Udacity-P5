@@ -36,7 +36,7 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 ![alt text][image1]
 
 
-The code for this step (extracted HOG features) is contained in the 5th code cell of the IPython notebook ，in the function `get_hog_features`    
+The code for this step (extracted HOG features) is contained in the 5th code cell of the IPython notebook `P5-Solution.ipynb` ，in the function `get_hog_features`    
 
 here I try many parameter combination to find the best parameter for the code.
 
